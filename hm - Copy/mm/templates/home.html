@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        {% for image in background_image %}
+        <div class="col-md-12">
+            <img src="{{ image.image.url }}" class="img-fluid" alt="{{ image.title }}">
+        </div>
+        {% endfor %}
+<hr>
+<div class="container">
+       <h4 class="text-center">About us</h4>
+    <div class="row mt-0" id="about">   
+        {% for about in about %}
+        <div class="col-md-6">
+            <img src="{{ about.image.url }}" class="img-fluid"  alt="{{ about.title }}">
+        </div>
+        <div class="col-md-6 ">
+            <h1>{{ about.title }}</h1>
+            <p>{{ about.description }}</p>
+        </div>
+       
+        {% endfor %}
+    </div>
+</div>
+
+<hr>
+<div class="container">
+<div class="row">
+    <h1 class="text-center text-dark">Our Service</h1>
+    <div class="row">  
+        {% for service in services %}
+        <div class="col-md-3">
+    <div class="card  ms-5 mb-5" style="width:20rem;">
+        <h5 class="card-header">{{ service.title }}</h5>
+        <img src="{{service.image.url}}" class="card-img-top" alt="{{service.title}}">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">{{ service.description }}</p>
+            <p class="card-text">{{ service.price }}</p>
+        </div>
+    </div>
+        </div> 
+      
+     
+        {% endfor %}
+    </div>
+    <hr>
+</div>
+    <hr>
+    <div class="row">
+        <div class="text-center">
+        <h4>Scan the QR code to view the menu on your phone:</h4>
+        <img src="{% url 'qrcode' %}" alt="qrcode">   
+        </div>
+        </div>
+</div>
+</div>
+{% endblock %}

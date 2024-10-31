@@ -1,0 +1,35 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Django specific
+*.log
+*.sqlite3
+db.sqlite3
+/media/
+staticfiles/
+static/
+templates/menu/index.html  # Exclude this specific template if necessary
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+.history/
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# MacOS
+.DS_Store
+
+# Other configurations
+*.pot
+*.pyc
+*.pdb
